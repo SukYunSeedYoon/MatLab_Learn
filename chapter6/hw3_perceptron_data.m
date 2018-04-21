@@ -1,5 +1,6 @@
 
 clear;
+clf;
 % 10개의 데이터 생성
 NumD=10;
 
@@ -19,6 +20,18 @@ train_out(1:NumD, 1)=zeros(NumD,1);
 train_out(1+NumD: 2*NumD,1) = zeros(NumD,1)+1;
 
 
- 
+figure(1);
+hold on;
+
+axis([-4 8 -4 8]);
+grid on;
+
+
+plot(train(1:NumD, 1), train(1:NumD, 2), 'r*'); 
+hold on;
+
+plot(train(1+NumD:2*NumD,1), train(1+NumD:NumD*2, 2), 'o');
+hold on;
+
 
 save hw3_data train train_out NumD
