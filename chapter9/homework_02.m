@@ -25,7 +25,8 @@ S=cov(X);
 % 첫번째 주성분 벡터 계산과 공간에 표시
 w1=V(:,2);
 figure(1);
-line( [0 w1(1)*D(2,2)] + M(1),[0 w1(2)*D(2,2)]+ M(2));
+line( [0 w1(1)*D(2,2)] + M(1),[0 w1(2)*D(2,2)]+ M(2), 'Color','green','LineStyle','-');
+
 
 % 첫번재 주성분 백터 사영
 YX1=w1'*X1';YX2=w1'*X2';
@@ -51,7 +52,7 @@ Sb=(m1-m2)' * (m1-m2);
 [V,D]=eig(Sb*inv(Sw)); %#ok<MINV>
 w=V(:,2); % 찾아진 벡터
 figure(1); % 백터를 공간에 표시
-line([0 w(1)*-8]+M(1), [0 w(2)*-8]+M(2));
+line([0 w(1)*-8]+M(1), [0 w(2)*-8]+M(2), 'Color','red','LineStyle','-');
 
 % 백터 w 방향으로 사영
 YX1=w'*X1'; YX2=w'*X2';
@@ -60,7 +61,7 @@ YX1=w'*X1'; YX2=w'*X2';
 pYX1=w*YX1; pYX2=w*YX2;
 
 figure(2);
-plot(pYX1(1,:)+M(1), pYX1(2,:), '*');
+plot(pYX1(1,:)+M(1), pYX1(2,:), 'b*');
 plot(pYX2(1,:)+M(1), pYX2(2,:), 'ro');
 
 
